@@ -112,8 +112,10 @@ void TriangleWindow::initialize()
                        )/360
                       )*dist;
 
-        particules[i].x = 0.5f + (float)+x/(m_image.width()) - ((float)m_image.width()/2.0)/m_image.width();
-        particules[i].y = 0.5f + (float)y/(m_image.height()) - ((float)m_image.height()/2.0)/m_image.height();
+        //particules[i].x = 0.5f + (float)x/(m_image.width()) - ((float)m_image.width()/2.0)/m_image.width();
+        particules[i].x = ((1-x)/2)/m_image.width();
+        particules[i].y = ((1-y)/2)/m_image.height();
+        //particules[i].y = 0.5f + (float)y/(m_image.height()) - ((float)m_image.height()/2.0)/m_image.height();
         particules[i].z = (float)(alt)/100;
     }
 
@@ -591,7 +593,7 @@ void TriangleWindow::displayColor(float alt)
 
 void TriangleWindow::updateParticlesAut()
 {
-    int id2;
+    long id2;
 #pragma omp parallel
     {
 #pragma omp for
@@ -640,7 +642,7 @@ void TriangleWindow::updateParticlesAut()
 
 void TriangleWindow::updateParticlesHiv()
 {
-    int id2;
+    long id2;
 #pragma omp parallel
     {
 #pragma omp for

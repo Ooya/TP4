@@ -38,7 +38,7 @@ int main(int argc, char **argv)
         if (i == 0)
             window[i] = new TriangleWindow();
         else
-            window[i] = new TriangleWindow(30);
+            window[i] = new TriangleWindow(20);
         window[i]->setSeason(i);
         window[i]->c = c;
         window[i]->setFormat(format);

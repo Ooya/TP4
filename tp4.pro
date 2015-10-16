@@ -1,6 +1,9 @@
-QMAKE_MAC_SDK = macosx10.11
+#QMAKE_MAC_SDK = macosx10.11
 
 #QMAKE_CXXFLAGS += -stdlib=libc++ -std=c++11
+QMAKE_CXXFLAGS += -std=c++11
+QMAKE_CXXFLAGS += -fopenmp
+QMAKE_LFLAGS += -fopenmp
 
 INCLUDEPATH += /opt/local/include
 #LIBS += -stdlib=libc++
